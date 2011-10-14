@@ -1,6 +1,8 @@
 class Topic < ActiveRecord::Base
 	has_many :posts
 
+	accepts_nested_attributes_for :posts
+
 	def send_message_to_subscribers(message)
 		# TODO: ITERATE THROUGH ALL THE SUBSCRIBERS AND SEND MESSAGE
 	end

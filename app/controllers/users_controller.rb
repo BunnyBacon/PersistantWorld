@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
-    # TODO: Define all the background user stuff before saving (initial friendslist)
+    @user.setup
+    
     if @user.save
       flash[:notice] = "Account registered!"
       redirect_back_or_default account_url

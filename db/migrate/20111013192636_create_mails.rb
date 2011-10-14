@@ -5,7 +5,6 @@ class CreateMails < ActiveRecord::Migration
     	t.string :recipient
     	t.text :message
     	t.datetime :sent_at
-    	t.integer :id
     	t.integer :parent_id
       t.boolean :unread
       t.timestamps
