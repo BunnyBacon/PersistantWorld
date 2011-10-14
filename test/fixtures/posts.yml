@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  author: 1
+  title: MyString
+  body: MyText
+  timestamp: 2011-10-10 23:56:24
+  status: MyString
+
+two:
+  author: 1
+  title: MyString
+  body: MyText
+  timestamp: 2011-10-10 23:56:24
+  status: MyString
