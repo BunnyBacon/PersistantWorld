@@ -1,0 +1,11 @@
+class CreateFriendslistUsersJoinTable < ActiveRecord::Migration
+  def up
+  	create_table :friendslist_users, :id => false do |t|
+  		t.integer :friendslist_id
+  		t.integer :user_id
+  end
+
+  def down
+  	drop_table :friendslist_users
+  end
+end

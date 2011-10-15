@@ -13,9 +13,6 @@ class CreateProfiles < ActiveRecord::Migration
     	t.text :homebrew_rules
     	t.text :about_me
     	t.text :signature
-    	t.string :avatar_file_name
-    	t.integer :avatar_file_size
-    	t.datetime :avatar_updated_at
       t.timestamps
     end
   end
