@@ -10,10 +10,12 @@ PersistantWorld::Application.routes.draw do
   # /***** Resoources ******/
   resources :posts
   resources :topics
-  # Login related stuff
+  
+  # Login related
   resource :user_session
   resource :account, :controller => 'users'
   resources :users
+  get 'new-fancy' => 'users#new_fancy', as: 'new_fancy'
 
 
   # You can have the root of your site routed with "root"

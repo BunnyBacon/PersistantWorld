@@ -5,6 +5,10 @@ class UserSessionsController < ApplicationController
 	def new
 	  @user_session = UserSession.new
 	end
+
+	def new_fancy
+	  @user_session = UserSession.new
+	end
 	  
 	def create
 	  @user_session = UserSession.new(params[:user_session])

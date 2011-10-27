@@ -1,0 +1,2 @@
+class NoSessionController < ApplicationController
+end
