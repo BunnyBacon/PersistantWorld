@@ -5,7 +5,7 @@ class MailsController < ApplicationController
 
 	def new
 		@mail = Mail.new
-	end
+	end 
 
 	def create
 		@mail = Mail.new(params[:mail])

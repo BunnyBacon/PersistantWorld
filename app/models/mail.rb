@@ -33,6 +33,7 @@ class Mail < ActiveRecord::Base
 		fail_message = Mail.new
 		fail_message.recipient = author
 		fail_message.author = "System Responder"
+		fail_message.subject = "[Do Not Reply] Your message failed to send!"
 		fail_message.message = "Sorry, the username #{username} does not exist. Please check to make sure that the spelling is correct or that the user has not deleted his/her account. Note that if the message had multiple recipients, the message was still sent to all other recipients provided this error does not occur."
 		fail_message.send
 		fail_message.destroy

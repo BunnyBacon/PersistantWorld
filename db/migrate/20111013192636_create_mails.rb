@@ -3,6 +3,7 @@ class CreateMails < ActiveRecord::Migration
     create_table :mails do |t|
     	t.string :author
     	t.string :recipient
+      t.string :subject
     	t.text :message
     	t.datetime :sent_at
     	t.integer :parent_id

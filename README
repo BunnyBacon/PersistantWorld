@@ -23,3 +23,8 @@ The ruby on rails project that goes along with the www.PersistentWorld.net websi
 	3. Build a subscriber system for the topics. (Maybe a model?)
 	4. Discuss the layout ideas with Jer.
   5. Decide the system used for wiki. Maybe some kind of tree?
+
+=====================================
+              Notes
+=====================================
+Deciding on how to create an easier way for people to go to the threads that they enjoy reading. My current idea is to shorten the name of the topic title. But what happens when people add tags to the front of thier topic in brackets? Or if there are 2 with the same name? That would be kind of conflicting. Maybe I should add a variable so that people can directly give a name to thier thread that is used in the URL. I like this idea but I feel like there will be an issue with it. I decided to go with this. It might have a bit of overhead though
