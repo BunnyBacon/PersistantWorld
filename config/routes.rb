@@ -1,6 +1,8 @@
 PersistantWorld::Application.routes.draw do
   
 
+  get "shared/homepage"
+
   # /***** Pathing *****/
 
   # Forum Related Paths
@@ -20,5 +22,5 @@ PersistantWorld::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'shared#homepage'
 end
