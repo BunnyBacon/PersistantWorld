@@ -16,6 +16,7 @@ gem "paperclip", "~> 2.4"
 #=======================
 gem 'jquery-rails'
 gem 'fancybox-rails'
+gem 'irwi'
 
 # Gems used only for assets and not required
 # in production environments by default.

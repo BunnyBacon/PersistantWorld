@@ -5,11 +5,13 @@ class User < ActiveRecord::Base
 	has_many :inboxes
 	has_attached_file :avatar
 
-	accepts_nested_attributes_for :profile, :friendslist, :inboxes, :dashboard
+	accepts_nested_attributes_for :profile, :friendslists, :inboxes, :dashboard
+	attr_accessible :password, :password_confirmation
+	validates :password, :presence     => true,  
+                       :confirmation => true,  
+                       :length       => { :within => 6..40 } 
 
-	acts_as_authentic do |c|
-		c.my_config_option = my_value
-	end
+	acts_as_authentic do |c| c.login_field = :username end
 
 	def setup
 		#this function is run before the first save. Prepares all the non-user oriented details.

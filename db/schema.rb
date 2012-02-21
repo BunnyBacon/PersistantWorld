@@ -11,7 +11,47 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111013064959) do
+ActiveRecord::Schema.define(:version => 20120221221412) do
+
+  create_table "dashboards", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "forums", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "friendslists", :force => true do |t|
+    t.integer  "parent_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "friendslists_users", :id => false, :force => true do |t|
+    t.integer "friendslist_id"
+    t.integer "user_id"
+  end
+
+  create_table "inboxes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mails", :force => true do |t|
+    t.string   "author"
+    t.string   "recipient"
+    t.string   "subject"
+    t.text     "message"
+    t.datetime "sent_at"
+    t.integer  "parent_id"
+    t.boolean  "unread"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", :force => true do |t|
     t.integer  "author"
@@ -19,6 +59,34 @@ ActiveRecord::Schema.define(:version => 20111013064959) do
     t.text     "body"
     t.datetime "timestamp"
     t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "rating"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "favorite_system"
+    t.string   "favorite_class"
+    t.string   "favorite_alignment"
+    t.string   "favorite_race"
+    t.string   "favorite_genre"
+    t.integer  "number_of_games_played"
+    t.integer  "number_of_games_run"
+    t.text     "homebrew_rules"
+    t.text     "about_me"
+    t.text     "signature"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "topics", :force => true do |t|
+    t.string   "status"
+    t.string   "title"
+    t.string   "short_url"
+    t.boolean  "private"
+    t.datetime "last_updated"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,6 +105,46 @@ ActiveRecord::Schema.define(:version => 20111013064959) do
     t.string   "single_access_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
+
+  create_table "wiki_page_attachments", :force => true do |t|
+    t.integer  "page_id",                           :null => false
+    t.string   "wiki_page_attachment_file_name"
+    t.string   "wiki_page_attachment_content_type"
+    t.integer  "wiki_page_attachment_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "wiki_page_versions", :force => true do |t|
+    t.integer  "page_id",    :null => false
+    t.integer  "updator_id"
+    t.integer  "number"
+    t.string   "comment"
+    t.string   "path"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "updated_at"
+  end
+
+  add_index "wiki_page_versions", ["page_id"], :name => "index_wiki_page_versions_on_page_id"
+  add_index "wiki_page_versions", ["updator_id"], :name => "index_wiki_page_versions_on_updator_id"
+
+  create_table "wiki_pages", :force => true do |t|
+    t.integer  "creator_id"
+    t.integer  "updator_id"
+    t.string   "path"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "wiki_pages", ["creator_id"], :name => "index_wiki_pages_on_creator_id"
+  add_index "wiki_pages", ["path"], :name => "index_wiki_pages_on_path", :unique => true
 
 end

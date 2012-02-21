@@ -1,9 +1,8 @@
-<h1>Login</h1>
-
-<% form_for @user_session, :url => user_session_path do |f| %>
-  <%= f.error_messages %>
-  <%= f.label :login %><br />
-  <%= f.text_field :login %><br />
+<h3>Login</h3>
+<%= form_for @user_session, :url => user_session_path do |f| %><!-- Currently Visable. Put "=" after "%" to show -->
+  <!-- TODO: ERROR HANDLING -->
+  <%= f.label :username %><br />
+  <%= f.text_field :username %><br />
   <br />
   <%= f.label :password %><br />
   <%= f.password_field :password %><br />

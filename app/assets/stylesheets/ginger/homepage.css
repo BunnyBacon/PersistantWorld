@@ -96,7 +96,7 @@ img {
 .threecol .colmid {
 	right:18%;			/* width of the right column */
 	/*background:#555555;		 center column background colour */
-	background-image:url("images/background1.jpg");
+	background-image:url("/images/ginger/background1.jpg");
 }
 .threecol .colleft {
 	right:64%;			/* width of the middle column */

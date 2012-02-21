@@ -1,6 +1,8 @@
 PersistantWorld::Application.routes.draw do
   
 
+  wiki_root '/wiki'
+
   get "shared/homepage"
 
   # /***** Pathing *****/
@@ -17,6 +19,8 @@ PersistantWorld::Application.routes.draw do
   resource :user_session
   resource :account, :controller => 'users'
   resources :users
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
   get 'new-fancy' => 'users#new_fancy', as: 'new_fancy'
 
 

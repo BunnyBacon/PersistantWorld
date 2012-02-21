@@ -1,2 +1,38 @@
-<h1>Shared#homepage</h1>
-<p>Find me in app/views/shared/homepage.html.erb</p>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+      $("a#loginlink").fancybox();
+  });
+</script>
+
+<div id="header">
+	<%= link_to image_tag("ginger/banner1.png"), "/" %>
+	<div id="login">
+		<!-- TODO: IMPLEMENT SESSIONS HERE -->
+		<%#= render :partial => 'user_sessions/new' %>
+		<h3><a id="loginlink" href="/login">Login</a> / 
+		<%= link_to "Register", new_user_path, :id => "registerlink" %></h3>
+	</div>
+</div> <!-- End Header -->
+
+<div class="colmask threecol">
+	<div class="colmid">
+		<div class="colleft">
+			
+			<div class="col1"> <!-- Mid column -->
+				<h2>The Persistent World ALPHA </h2>
+			</div>
+
+			<div class="col2"> <!-- Left Column -->
+				<h2>Navigation</h2>
+				<%= render 'nav' %>
+			</div>
+
+			<div class="col3"> <!-- Right Column -->
+			</div>
+
+		</div>
+	</div>
+</div> <!-- End Body -->
+
+<div id="footer">
+</div><!-- End Footer -->
