@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120221234440) do
+ActiveRecord::Schema.define(:version => 20120222202310) do
 
   create_table "dashboards", :force => true do |t|
     t.datetime "created_at"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20120221234440) do
     t.text     "signature"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "topics", :force => true do |t|
