@@ -1,2 +1,9 @@
+<h2>User Profile Edit Page</h2>
 
-<p>Edit user info!</p>
+	<%= form_for (@profile) do |form| %>
+		<div>
+			<%= form.label :login %> <br/>
+			<%= form.textfield :login %>
+		</div>
+
+	<% end %>
