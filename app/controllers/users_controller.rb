@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user.setup
     
     if @user.save
-      flash[:notice] = "Account registered!"
+      format.html { redirect_to @user, notice: 'Registration successfull.' }
       redirect_back_or_default account_url
     else
       render :action => :new
