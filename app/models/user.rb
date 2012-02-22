@@ -13,6 +13,13 @@ class User < ActiveRecord::Base
 
 	acts_as_authentic
 
+	alias_method :db_profile, :profile
+	def profile
+	  self.profile = Profile.create(:user => self) if self.db_profile.nil?
+	  self.db_profile
+	end
+
+
 	def setup
 		#this function is run before the first save. Prepares all the non-user oriented details.
 
@@ -30,7 +37,7 @@ class User < ActiveRecord::Base
 		list.parent_id = self.id
 
 		#Preparing blank profile. There is no "new" method in profiles controller.
-		self.profile = Profile.new
+		#self.profile = Profile.new
 	end
 
 	def recieve_mail(message)

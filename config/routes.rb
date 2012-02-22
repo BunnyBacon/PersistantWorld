@@ -22,6 +22,7 @@ PersistantWorld::Application.routes.draw do
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
   get 'new-fancy' => 'users#new_fancy', as: 'new_fancy'
+  get 'edit-profile' => 'profiles#edit', as: 'edit_profile'
 
 
   # You can have the root of your site routed with "root"

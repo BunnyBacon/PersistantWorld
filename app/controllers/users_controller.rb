@@ -10,9 +10,9 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.setup
     
+    logger.debug params[:user].inspect
     if @user.save
-      format.html { redirect_to @user, notice: 'Registration successfull.' }
-      redirect_back_or_default account_url
+      redirect_to "/", notice: 'Registration successfull.'
     else
       render :action => :new
     end
