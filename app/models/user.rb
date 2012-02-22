@@ -5,8 +5,11 @@ class User < ActiveRecord::Base
 	has_many :inboxes
 	has_attached_file :avatar
 
+	has_many :posts
+	has_and_belongs_to_many :topics
+
 	accepts_nested_attributes_for :profile, :friendslists, :inboxes, :dashboard
-	attr_accessible :password, :password_confirmation, :login, :email, :perms
+	attr_accessible :password, :password_confirmation, :login, :email
 	validates :password, :presence     => true,  
                        :confirmation => true,  
                        :length       => { :within => 6..40 } 
@@ -38,6 +41,7 @@ class User < ActiveRecord::Base
 
 		#Preparing blank profile. There is no "new" method in profiles controller.
 		self.build_profile
+		setperms
 	end
 
 	def recieve_mail(message)
@@ -46,6 +50,11 @@ class User < ActiveRecord::Base
 
 		self.inboxes.first << new_mail
 		self.inboxes.first.update_attributes(self)
+	end
+
+	def setperms(newperm = 1)
+		# Permissions: Default User = 1, Moderator = 2, Admin = 3
+		perms = newperm
 	end
 
 	def admin?

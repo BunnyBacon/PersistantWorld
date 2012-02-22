@@ -1,0 +1,13 @@
+<h2>Listing Forums</h2>
+---------------------------------------------------------------------
+<% @forums.each do |f| %>
+<p><b>Forum:</b> <%= link_to f.title, f %></p>
+-----------------------
+<p><b>Description:</b> <%= f.description %></p>
+<!-- TODO: LATEST POST -->
+---------------------------------------------------------------------
+<% end %>
+<% if @forums.count < 1 %>
+<p>There are no Forums yet!</p>
+<% end %>
+<br /><%= link_to "New Forum", new_forum_path %>

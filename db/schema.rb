@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120222204230) do
+ActiveRecord::Schema.define(:version => 20120222214057) do
 
   create_table "dashboards", :force => true do |t|
     t.datetime "created_at"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(:version => 20120222204230) do
   end
 
   create_table "posts", :force => true do |t|
-    t.integer  "author"
     t.string   "title"
     t.text     "body"
     t.datetime "timestamp"
@@ -62,6 +61,8 @@ ActiveRecord::Schema.define(:version => 20120222204230) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "rating"
+    t.integer  "user_id"
+    t.integer  "topic_id"
   end
 
   create_table "profiles", :force => true do |t|

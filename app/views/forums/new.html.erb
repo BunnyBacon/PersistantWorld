@@ -1,0 +1,17 @@
+<h2>New Forum</h2>
+<% form_for (@forum) do |f| %>
+	<div class="field">
+		<%= f.label :title %><br />
+		<%= f.text_field :title %><br />
+	</div>
+	<div class="field">
+		<%= f.label :description %><br />
+		<%= f.text_field :description %><br />
+	</div>
+	<div class="field">
+		<!-- TODO: SET ADMIN PERMISSIONS -->
+	</div>
+	<div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

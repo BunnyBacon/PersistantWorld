@@ -1,0 +1,16 @@
+<!-- TODO: BREADCRUMBS -->
+<h2>Topic: <%= @topic.title %></h2>
+<% @topic.posts.each do |p| %>
+-------------------------------------------------------------------------
+	<p><h3><%= p.title %></h3>by: <%= p.user.login %></p>
+	<p><%= p.body %></p>
+	-------------------------------
+	<p><%= p.user.signature %></p>
+	<!-- TODO ADD USER CONTROLS (ie: Edit) -->
+	<br />
+-------------------------------------------------------------------------
+<% end %>
+<!-- TODO: ADD PAGING -->
+<%= link_to "Reply", new_post_path(@topic.id), :id => "newpost" %>
+<!-- TODO: ADD SUBSCRIBE FUNCTIONALITY -->
+<!-- TODO: ADD MOD/ADMIN CONTROLS -->
