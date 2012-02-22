@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 	has_attached_file :avatar
 
 	accepts_nested_attributes_for :profile, :friendslists, :inboxes, :dashboard
-	attr_accessible :password, :password_confirmation, :login, :email
+	attr_accessible :password, :password_confirmation, :login, :email, :perms
 	validates :password, :presence     => true,  
                        :confirmation => true,  
                        :length       => { :within => 6..40 } 
@@ -47,4 +47,21 @@ class User < ActiveRecord::Base
 		self.inboxes.first << new_mail
 		self.inboxes.first.update_attributes(self)
 	end
+
+	def admin?
+		if perms > 2
+			true
+		else
+			false
+		end
+	end
+
+	def moderator?
+		if perms > 1
+			true
+		else
+			false
+		end
+	end
+
 end

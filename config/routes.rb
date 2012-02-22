@@ -20,6 +20,7 @@ PersistantWorld::Application.routes.draw do
   resource :user_session
   resource :account, :controller => 'users'
   resources :users
+  resources :profiles
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
   get 'new-fancy' => 'users#new_fancy', as: 'new_fancy'

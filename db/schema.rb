@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120222202310) do
+ActiveRecord::Schema.define(:version => 20120222204230) do
 
   create_table "dashboards", :force => true do |t|
     t.datetime "created_at"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20120222202310) do
     t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "perms"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
