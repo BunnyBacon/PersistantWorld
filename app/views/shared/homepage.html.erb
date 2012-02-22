@@ -8,9 +8,7 @@
 	<%= link_to image_tag("ginger/banner1.png"), "/" %>
 	<div id="login">
 		<!-- TODO: IMPLEMENT SESSIONS HERE -->
-		<%#= render :partial => 'user_sessions/new' %>
-		<h3><a id="loginlink" href="/login">Login</a> / 
-		<%= link_to "Register", new_user_path, :id => "registerlink" %></h3>
+		<%= render 'login' %>
 	</div>
 </div> <!-- End Header -->
 

@@ -1,0 +1,5 @@
+<% if current_user %>
+	Welcome back!! <%= link_to "View/Edit Profile", edit_profile_path(:current) %>
+<% else %>
+	<h3><a id="loginlink" href="/login">Login</a> / <%= link_to "Register", new_user_path, :id => "registerlink" %></h3>
+<% end %>
