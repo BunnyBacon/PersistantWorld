@@ -1,9 +1,69 @@
 <h2>User Profile Edit Page</h2>
 
 	<%= form_for (@profile) do |form| %>
+		
 		<div>
-			<%= form.label :login %> <br/>
-			<%= form.textfield :login %>
+			<%= form.label :firstname %> <br/>
+			<%= form.text_field :firstname %>
+		</div>
+
+		<div>
+			<%= form.label :lastname %> <br/>
+			<%= form.text_field :lastname %>
+		</div>
+
+		<div>
+			<%= form.label :favorite_system %> <br/>
+			<%= form.text_field :favorite_system %>
+		</div>
+
+		<div>
+			<%= form.label :favorite_class %> <br/>
+			<%= form.text_field :favorite_class %>
+		</div>
+
+		<div>
+			<%= form.label :favorite_alignment %> <br/>
+			<%= form.text_field :favorite_alignment %>
+		</div>
+
+		<div>
+			<%= form.label :favorite_race %> <br/>
+			<%= form.text_field :favorite_race %>
+		</div>
+
+		<div>
+			<%= form.label :favorite_genre %> <br/>
+			<%= form.text_field :favorite_genre %>
+		</div>
+
+		<div>
+			<%= form.label :number_of_games_played %> <br/>
+			<%= form.text_field :number_of_games_played, :size => 5%>
+		</div>
+
+		<div>
+			<%= form.label :number_of_games_run %> <br/>
+			<%= form.text_field :number_of_games_run, :size => 5 %>
+		</div>
+
+		<div>
+			<%= form.label :homebrew_rules %> <br/>
+			<%= form.text_area :homebrew_rules, :size => "40x10" %>
+		</div>
+
+		<div>
+			<%= form.label :about_me %> <br/>
+			<%= form.text_area :about_me, :size => "40x10" %>
+		</div>
+
+		<div>
+			<%= form.label :signature %> <br/>
+			<%= form.text_area :signature, :size => "40x5" %>
+		</div>
+
+		<div>
+			<%= form.submit "Edit Info"%>
 		</div>
 
 	<% end %>

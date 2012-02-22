@@ -1,0 +1,15 @@
+<h2>"Your Profile Information"</h2>
+<p>First Name:                          <%= @profile.firstname %> </p><br/>
+<p>Last Name:                           <%= @profile.lastname %> </p><br/>
+<p>Favorite System:                     <%= @profile.favorite_system %> </p><br/>
+<p>Favorite Class:                      <%= @profile.favorite_class %> </p><br/>
+<p>Favorite Alignment:                  <%= @profile.favorite_alignment %> </p><br/>
+<p>Favorite Race:                       <%= @profile.favorite_race %> </p><br/>
+<p>Favorite Genre:                      <%= @profile.favorite_genre %> </p><br/>
+<p>Games Played:                        <%= @profile.number_of_games_played.to_i %> </p><br/>
+<p>Games Run:                           <%= @profile.number_of_games_run.to_i %> </p><br/>
+<p>Homebrew Rules:                      <%= @profile.homebrew_rules %> </p><br/>
+<p>About Me:                            <%= @profile.about_me %> </p><br/>
+<p>Signature:                           <%= @profile.signature %> </p><br/>
+<%= link_to "Home", root_path %>
+<%= link_to "Edit", edit_profile_path %>
