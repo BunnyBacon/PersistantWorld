@@ -1,5 +1,7 @@
 class UserSessionsController < ApplicationController
 
+  find_by_login_method :find_by_login_or_email
+  
   # GET /user_sessions/new
   # GET /user_sessions/new.xml
   def new

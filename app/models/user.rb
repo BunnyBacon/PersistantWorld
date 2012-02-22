@@ -6,12 +6,16 @@ class User < ActiveRecord::Base
 	has_attached_file :avatar
 
 	accepts_nested_attributes_for :profile, :friendslists, :inboxes, :dashboard
-	attr_accessible :password, :password_confirmation
+	attr_accessible :password, :password_confirmation, :login, :email
 	validates :password, :presence     => true,  
                        :confirmation => true,  
                        :length       => { :within => 6..40 } 
 
-	acts_as_authentic do |c| c.login_field = :username end
+	acts_as_authentic
+
+	def self.find_by_login_or_email(login)
+   find_by_login(login) || find_by_email(login)
+	end
 
 	def setup
 		#this function is run before the first save. Prepares all the non-user oriented details.
