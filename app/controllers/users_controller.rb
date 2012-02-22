@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @user.setup
-    
+       
     logger.debug params[:user].inspect
     if @user.save
       redirect_to "/", notice: 'Registration successfull.'
@@ -34,5 +34,11 @@ class UsersController < ApplicationController
     else
       render :action => :edit
     end
+  end
+
+  def destroy
+    current_user_session.destroy
+    flash[:notice] = "Logout successful!"
+    redirect_to "/"
   end
 end
