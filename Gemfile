@@ -10,6 +10,7 @@ gem 'mysql2'
 gem 'execjs'  
 gem 'therubyracer'
 gem "paperclip", "~> 2.4"
+gem "rails3-generators"
 
 #=======================
 #      Feature Gems

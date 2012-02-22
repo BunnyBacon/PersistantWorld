@@ -10,6 +10,7 @@ PersistantWorld::Application.routes.draw do
   # Forum Related Paths
   get 'topics/:thread/:page' => 'topics#show', as: 'show_topic'
   get 'new-topic' => 'topics#new', as: 'new_topic'
+  get 'profile/edit' => 'profiles#edit', as: 'edit_profile'
 
   # /***** Resoources ******/
   resources :posts
