@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
 		list.parent_id = self.id
 
 		#Preparing blank profile. There is no "new" method in profiles controller.
-		#self.profile = Profile.new
+		self.build_profile
 	end
 
 	def recieve_mail(message)

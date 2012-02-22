@@ -1,6 +1,7 @@
 class Topic < ActiveRecord::Base
 	has_many :posts
 	has_many :friendslists
+	belongs_to :forum
 
 	validates :title, :presence => true
 	validates :short_url, :presence => true, :uniqueness => true
