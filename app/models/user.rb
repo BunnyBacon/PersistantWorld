@@ -13,10 +13,6 @@ class User < ActiveRecord::Base
 
 	acts_as_authentic
 
-	def self.find_by_login_or_email(login)
-   find_by_login(login) || find_by_email(login)
-	end
-
 	def setup
 		#this function is run before the first save. Prepares all the non-user oriented details.
 
