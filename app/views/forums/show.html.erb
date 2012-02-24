@@ -1,13 +1,13 @@
 <h2>Forum: <%= @forum.title %></h2>
 <h3>Description: <%= @forum.description %></h3>
---------------------------------------------------------
+--------------------------------------------------------<br>
 <% @forum.topics.each do |t| %>
 <p><h3>Topic: <%= link_to t.title, t %></h3></p>
 <p><b>Status:</b> <%= t.status %>  <b>Private:</b> <%= t.private?.to_s %>  <b>Posts:</b> <%= t.posts.count %>
---------------------------------------------------------
+--------------------------------------------------------<br>
 <% end %>
-<% if @forums.topics.count < 1 %>
+<% if @forum.topics.empty? %>
 There are no topics in this forum!
 <% end %>
-<%= link_to "New Topic", new_topic_path(@forum.id) %>
+<%= link_to "New Topic", new_forum_topic_path(@forum) %>
 <!-- TODO: ADMIN CONTROLS -->

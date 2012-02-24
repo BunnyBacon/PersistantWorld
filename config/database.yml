@@ -15,7 +15,7 @@ development:
   database: PersistantWorld_development
   pool: 5
   username: root
-  password: 
+  password: emmanu0
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: PersistantWorld_test
   pool: 5
   username: root
-  password: 
+  password: emmanu0
   host: localhost
 
 production:
@@ -38,5 +38,5 @@ production:
   database: PersistantWorld_production
   pool: 5
   username: root
-  password: 
+  password: emmanu0
   host: localhost

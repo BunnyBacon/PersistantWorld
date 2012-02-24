@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Author:</b>
-  <%= @post.author %>
   <b>Timestamp:</b>
   <%= @post.timestamp %>
 </p>
@@ -20,5 +18,5 @@
 
 
 <!-- TODO: CHECK TO SEE IF THE PERSON WHO MADE THE POST IS LOGGED IN SO THAT THEY CAN EDIT IT, OR IF THEYRE ADMIN -->
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Edit', edit_topic_post_path(@topic, @post) %> |
+<%= link_to 'Back', :back %>

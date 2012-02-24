@@ -5,12 +5,13 @@
 	<p><h3><%= p.title %></h3>by: <%= p.user.login %></p>
 	<p><%= p.body %></p>
 	-------------------------------
-	<p><%= p.user.signature %></p>
+	<p><%= p.user.profile.signature %></p>
 	<!-- TODO ADD USER CONTROLS (ie: Edit) -->
 	<br />
 -------------------------------------------------------------------------
 <% end %>
 <!-- TODO: ADD PAGING -->
-<%= link_to "Reply", new_post_path(@topic.id), :id => "newpost" %>
+<%= link_to "New Post", new_topic_post_path(@topic), :id => "newpost" %>
 <!-- TODO: ADD SUBSCRIBE FUNCTIONALITY -->
+<%= link_to "Subscribe", subscribe_path(@topic), :id => "subscription" %>
 <!-- TODO: ADD MOD/ADMIN CONTROLS -->

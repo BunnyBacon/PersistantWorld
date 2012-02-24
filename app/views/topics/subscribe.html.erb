@@ -1,0 +1,8 @@
+<center>
+<b>Subscribe</b><br />
+You are about to subscribe to:<br>
+<%= @topic.title %><br>
+You will recieve messages whenever someone makes a post in this topic.<br>
+Are you sure?<br>
+<%= link_to "Yes!", confirm_sub_path(@topic.id) %><%= link_to "No", @topic %>
+</center>

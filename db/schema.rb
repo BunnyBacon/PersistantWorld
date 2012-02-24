@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120222214057) do
+ActiveRecord::Schema.define(:version => 20120223034349) do
 
   create_table "dashboards", :force => true do |t|
     t.datetime "created_at"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(:version => 20120222214057) do
   create_table "forums", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "description"
+    t.integer  "perms"
+    t.string   "title"
   end
 
   create_table "friendslists", :force => true do |t|
@@ -86,11 +89,17 @@ ActiveRecord::Schema.define(:version => 20120222214057) do
   create_table "topics", :force => true do |t|
     t.string   "status"
     t.string   "title"
-    t.string   "short_url"
     t.boolean  "private"
     t.datetime "last_updated"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
+    t.integer  "forum_id"
+  end
+
+  create_table "topics_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "topic_id"
   end
 
   create_table "user_sessions", :force => true do |t|

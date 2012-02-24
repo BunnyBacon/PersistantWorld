@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @topic = Topic.find(params[:topic_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -18,7 +19,8 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @topic = Topic.find(params[:topic_id])
+    @post = @topic.posts.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -31,12 +33,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
-    @post.timestamp = Time.now.to_datetime
+    @topic = Topic.find(params[:topic_id])
+    @post = @topic.posts.build(params[:post])
+    @post.user = current_user
+    @post.timestamp = Time.now
+    current_user.posts << @post
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        @topic.save
+        @current_user.save
+        format.html { redirect_to topic_post_path(@topic, @post), notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
