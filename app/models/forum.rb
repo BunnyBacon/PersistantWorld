@@ -3,4 +3,6 @@ class Forum < ActiveRecord::Base
 
 	validates :title, :presence => true, :length => {:within => 6..40 }
 	validates :description, :presence => true, :length => {:within => 25..100 }
+
+	paginates_per 15
 end

@@ -1,10 +1,12 @@
 TODO LIST
 ===============================
 Administration Controls
-Messaging system
+Messaging system STARTED
 Security (must be logged in...) STARTED
 Fix the Wiki system
 Dashboards
 Streams to the Dashboard
-Daily task system (Timed Events)
+Daily task system (Timed Events) (whenever gem)
 Voting for topics
+Paging for topics, mail, etc.. (Kaminari?)
+Apply Homepage CSS to appropriate places
