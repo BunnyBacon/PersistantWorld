@@ -1,6 +1,7 @@
 <h2>User Profile Edit Page</h2>
 
-	<%= form_for (@profile) do |form| %>
+	<%= form_for @profile, :html => { :multipart => true } do |form| %>
+		<%= form.error_messages %>
 		
 		<div>
 			<%= form.label :firstname %> <br/>
@@ -61,6 +62,11 @@
 			<%= form.label :signature %> <br/>
 			<%= form.text_area :signature, :size => "40x5" %>
 		</div>
+
+		<div>
+			<%= form.label 'Photo' %><br />
+  			<%= form.file_field :photo %>
+  		</div>
 
 		<div>
 			<%= form.submit "Edit Info"%>

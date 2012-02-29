@@ -11,5 +11,13 @@
 <p>Homebrew Rules:                      <%= @profile.homebrew_rules %> </p><br/>
 <p>About Me:                            <%= @profile.about_me %> </p><br/>
 <p>Signature:                           <%= @profile.signature %> </p><br/>
+
+<% if @profile.photo.exists? then %>
+<p>Small:<%= image_tag @profile.photo.url(:small) %></p>
+<p>Medium:<%= image_tag @profile.photo.url(:medium) %></p>
+<% else %>
+<p> There are no photo's attached, upload one. </p>
+<% end %>
+
 <%= link_to "Home", root_path %>
 <%= link_to "Edit", edit_profile_path %>
