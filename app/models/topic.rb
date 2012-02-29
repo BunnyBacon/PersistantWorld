@@ -2,21 +2,18 @@ class Topic < ActiveRecord::Base
 	has_many :posts
 	belongs_to :forum
 	has_and_belongs_to_many :users
+	acts_as_messagable
 
 	validates :title, :presence => true
 
 	accepts_nested_attributes_for :posts
 
 	def send_message_to_subscribers(message)
-
-	end
-
-	def send_message_to_players(message)
-	
+		# Not yet implemented
 	end
 
 	def send_inactivity_message
-
+		# Not yet implemented
 	end
 end
 

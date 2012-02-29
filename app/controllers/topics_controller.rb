@@ -5,6 +5,7 @@ class TopicsController < ApplicationController
 	end
 
 	def new
+		require_user #Ensuring that the user is signed in
 		@forum = Forum.find(params[:forum_id])
 		@topic = @forum.topics.build
 	end
@@ -27,6 +28,7 @@ class TopicsController < ApplicationController
 	end
 
 	def edit
+		require_user
 		@topic = Topic.find(params[:id])
 	end
 
@@ -54,6 +56,7 @@ class TopicsController < ApplicationController
 	end
 
 	def subscribe
+		require_user
 		@topic = Topic.find(params[:id])
 
 		#Is the user already subscribed to this topic?

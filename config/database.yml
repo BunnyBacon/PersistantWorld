@@ -12,11 +12,12 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: PersistantWorld_development
-  pool: 5
-  username: root
-  password: 
-  host: localhost
+
+  database: okonr_persistent_world_development
+  pool: 3306
+  username: okonr_rails
+  password: "9727933286"
+  host: 50.116.99.179
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -35,8 +36,9 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: PersistantWorld_production
-  pool: 5
-  username: root
-  password: 
-  host: localhost
+
+  database: okonr_persistent_world_production
+  pool: 3306
+  username: okonr_rails
+  password: "9727933286"
+  host: 50.116.99.179

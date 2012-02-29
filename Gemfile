@@ -17,6 +17,7 @@ gem "rails3-generators"
 #=======================
 gem 'jquery-rails'
 gem 'fancybox-rails'
+gem 'mailboxer'
 gem 'irwi'
 
 # Gems used only for assets and not required
