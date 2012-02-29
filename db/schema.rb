@@ -11,12 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20120224023456) do
-
-=======
 ActiveRecord::Schema.define(:version => 20120226000447) do
->>>>>>> 1999fc6fad1aeb6a0158e484bf5c9f563fd79b67
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
