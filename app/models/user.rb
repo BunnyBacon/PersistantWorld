@@ -25,15 +25,7 @@ class User < ActiveRecord::Base
 
 
 	def setup
-		#this function is run before the first save. Prepares all the non-user oriented details.
-
-		#preparing the first inboxes.
-		box = Inbox.new
-		box.name = "Inbox"
-		self.inboxes << box
-		outbox = Inbox.new
-		outbox.name = "Outbox"
-		self.inboxes << outbox
+		#this function is run before the first save. Prepares all the non-user oriented details.		
 
 		#preparing the first friendslist
 		list = Friendslist.new
