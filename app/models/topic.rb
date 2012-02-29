@@ -8,6 +8,8 @@ class Topic < ActiveRecord::Base
 
 	accepts_nested_attributes_for :posts
 
+	paginates_per 20 # Kaminari Pages system
+
 	def send_message_to_subscribers(message)
 		# Not yet implemented
 	end

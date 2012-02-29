@@ -11,6 +11,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem "paperclip", "~> 2.4"
 gem "rails3-generators"
+gem 'kaminari'
 
 #=======================
 #      Feature Gems

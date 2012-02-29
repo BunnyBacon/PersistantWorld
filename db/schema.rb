@@ -11,8 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120224023456) do
 
+=======
+ActiveRecord::Schema.define(:version => 20120226000447) do
+>>>>>>> 1999fc6fad1aeb6a0158e484bf5c9f563fd79b67
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
@@ -43,24 +47,6 @@ ActiveRecord::Schema.define(:version => 20120224023456) do
   create_table "friendslists_users", :id => false, :force => true do |t|
     t.integer "friendslist_id"
     t.integer "user_id"
-  end
-
-  create_table "inboxes", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "mails", :force => true do |t|
-    t.string   "author"
-    t.string   "recipient"
-    t.string   "subject"
-    t.text     "message"
-    t.datetime "sent_at"
-    t.integer  "parent_id"
-    t.boolean  "unread"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "notifications", :force => true do |t|

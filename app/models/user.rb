@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
                        :length       => { :within => 6..40 } 
 
 	acts_as_authentic
-	acts_as_messagable
+	acts_as_messageable
 
 	alias_method :db_profile, :profile
 	def profile
