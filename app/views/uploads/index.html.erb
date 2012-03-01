@@ -1,0 +1,18 @@
+<h2>View And Edit Your Uploads!</h2>
+<%= link_to "Home", root_path %></br></br>
+<!--<%= link_to "Edit", edit_profile_path %></br></br> -->
+
+<%= link_to "New Upload", new_user_upload_path(current_user)%> </br></br>
+
+<% @uploads.each do |u| %>
+	<% if u.upload.exists? %>
+		<p>Photo:</p><br/>
+		<p><%= u.upload_file_name %></p>
+		<p><%= image_tag u.upload.url(:small) %></p>
+		<p><%= link_to "Edit Information", edit_user_upload_path(current_user, u) %>
+		
+	<% else %>
+		<p> There are no photo's attached, upload one. </p>
+	<% end %>
+<% end %>
+

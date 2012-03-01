@@ -14,6 +14,10 @@ PersistantWorld::Application.routes.draw do
   resources :topics do
     resources :posts
   end
+  resources :users do
+    resources :uploads
+  end
+
   get 'subscribe-to-topic/:id' => 'topics#subscribe', as: 'subscribe'
   get 'confirm-subscription/:id' => 'topics#confirm_sub', as: 'confirm_sub'
   
@@ -26,6 +30,7 @@ PersistantWorld::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout
   get 'new-fancy' => 'users#new_fancy', as: 'new_fancy'
   get 'edit-profile' => 'profiles#edit', as: 'edit_profile'
+  get 'show-profile' => 'profiles#show', as: 'show_profile'
 
 
 

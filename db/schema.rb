@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120226000447) do
+ActiveRecord::Schema.define(:version => 20120229014458) do
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
@@ -122,6 +122,17 @@ ActiveRecord::Schema.define(:version => 20120226000447) do
   create_table "topics_users", :id => false, :force => true do |t|
     t.integer "user_id"
     t.integer "topic_id"
+  end
+
+  create_table "uploads", :force => true do |t|
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.boolean  "public"
+    t.string   "notes"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "user_sessions", :force => true do |t|

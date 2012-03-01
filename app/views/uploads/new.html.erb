@@ -1,0 +1,36 @@
+<h2>Post Your New Upload! </h2>
+<%= link_to "Home", root_path %>
+<%= link_to "Manage Uploads", user_uploads_path(:current)%> </br>
+
+<%= form_for [current_user, @upload], :html => { :multipart => true } do |f| %>
+	<%= f.error_messages %>
+
+	<div>
+		<%= f.label 'File Name' %><br />
+  		<%= f.file_field :upload %>
+	</div>
+
+	<div>
+	<!-- could be done with a checkbox-->
+		<br/><br/>
+		<%= f.label 'File is publicly viewable:' %><br/>
+		<%= f.radio_button :public, 'public', :checked => :public == true %>
+		<%= f.label 'Yes' %><br/>
+		<%= f.radio_button :public, 'public', :checked => :public == false %>
+		<%= f.label 'No' %><br/>
+
+	</div>
+
+	<div>
+		<br/><br/>
+		<%= f.label 'About the file:' %> <br/>
+		<%= f.text_area :notes, :size => "40x10" %>
+	</div>
+
+	<div>
+		<br/><br/>		
+		<%= f.submit "Upload File" %>
+	</div>
+	
+
+<% end %>

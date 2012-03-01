@@ -1,5 +1,6 @@
 <h2>User Profile Edit Page</h2>
-
+<%= link_to "Home", root_path %>
+<%= link_to "View Profile", show_profile_path(:current) %> </br>
 	<%= form_for @profile, :html => { :multipart => true } do |form| %>
 		<%= form.error_messages %>
 		

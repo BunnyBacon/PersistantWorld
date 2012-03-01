@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
 	has_many :posts
 	has_and_belongs_to_many :topics
+	has_many :uploads
 
 	accepts_nested_attributes_for :profile, :friendslists, :inboxes, :dashboard
 	attr_accessible :password, :password_confirmation, :login, :email
@@ -22,7 +23,6 @@ class User < ActiveRecord::Base
 	  self.profile = Profile.create(:user => self) if self.db_profile.nil?
 	  self.db_profile
 	end
-
 
 	def setup
 		#this function is run before the first save. Prepares all the non-user oriented details.		
