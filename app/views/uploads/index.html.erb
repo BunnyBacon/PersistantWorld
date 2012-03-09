@@ -9,8 +9,9 @@
 		<p>Photo:</p><br/>
 		<p><%= u.upload_file_name %></p>
 		<p><%= image_tag u.upload.url(:small) %></p>
-		<p><%= link_to "Edit Information", edit_user_upload_path(current_user, u) %>
-		
+		<p><%= link_to "Edit Information", edit_user_upload_path(current_user, u) %></p>
+		<p><%= u.notes %> </p>
+		<p><%= link_to "Delete", user_upload_path(current_user, u), :method => :delete %> </p>
 	<% else %>
 		<p> There are no photo's attached, upload one. </p>
 	<% end %>

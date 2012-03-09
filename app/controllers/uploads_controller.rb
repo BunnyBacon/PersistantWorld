@@ -35,19 +35,33 @@ class UploadsController < ApplicationController
 #   return an HTML form for editing an upload belonging to a specific user via: 
 	def edit
 		require_user
-		@uploads = current_user.uploads
+		
+		@uploads = Upload.find(params[:id])
+		current_user.uploads << @uploads
+		@uploads.user_id = current_user.id
+
+		
 	end
 
 #   update a specific upload belonging to a specific user via: 
 	def update
 		require_user
-		@uploads = current_user.uploads
+		@uploads = Upload.find(params[:id])
+
+		if @uploads.update_attributes(params[:upload])
+			redirect_to user_uploads_path, :notice => "Upload saved!"
+		else
+			redirect_to user_uploads_path, :notice => "Upload cannot be saved!"
+		end
 	end
 
 #   delete a specific upload belonging to a specific user via: 
 	def destroy
 		require_user
-		@uploads = current_user.uploads
+		@upload = Upload.find(params[:id])
+		@upload.destroy
+
+		redirect_to user_uploads_path
 	end
 
 end
